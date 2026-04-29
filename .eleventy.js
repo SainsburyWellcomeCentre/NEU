@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/database.schema.json");
 
   return {
+    pathPrefix: "/NEU/",
     dir: {
       input: "src",
       output: "_site",

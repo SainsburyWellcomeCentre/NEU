@@ -30,8 +30,10 @@
     });
   }
 
+  const basePath = window.NEU_BASE_URL || '/';
+
   /* ---------- Fetch and initialise ---------- */
-  fetch('/database.json')
+  fetch(`${basePath}database.json`)
     .then(res => {
       if (!res.ok) throw new Error('Failed to load database.');
       return res.json();
@@ -171,7 +173,7 @@
 
       return `
         <article class="project-card" id="card-${p.id}">
-          <img class="project-card__image" src="/${p.image}" alt="${p.name}" loading="lazy"
+          <img class="project-card__image" src="${basePath}${p.image}" alt="${p.name}" loading="lazy"
                onerror="this.style.display='none'">
           <div class="project-card__body">
             <span class="project-card__category">${leafCategory}</span>
