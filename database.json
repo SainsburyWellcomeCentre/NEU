@@ -103,7 +103,7 @@
     "specs": {
       "Type": "Capacitive",
       "Response Time": "<1 ms",
-      "interface": "SMA (TTL), USB-C"
+      "Interface": "SMA (TTL), USB-C"
     }
   }
 ]

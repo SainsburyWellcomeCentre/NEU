@@ -23,16 +23,25 @@ The Neuroscience Engineering Universe (NEU) curates and shares hardware and soft
 
 ```
 NEU/
-├── index.html          # Homepage
-├── discover.html       # Browsable project catalogue
-├── contribute.html     # Contribution guide
-├── styles.css          # Stylesheet
-├── script.js           # Client-side logic
-├── database.json       # Project database (add entries here)
+├── index.html              # Homepage
+├── discover.html           # Browsable project catalogue
+├── contribute.html         # Contribution guide
+├── learn.html              # Learn hub page
+├── learn/
+│   ├── electronics.html    # Electronics wiki
+│   ├── mechanical.html     # Mechanical design wiki
+│   └── programming.html    # Programming wiki
+├── styles.css              # Stylesheet
+├── scripts/
+│   ├── global.js           # Shared client-side logic (nav, toggles)
+│   └── discover.js         # Discover page logic (search, filter, render)
+├── database.json           # Project database (add entries here)
+├── database.schema.json    # JSON Schema for database validation
+├── package.json            # Scripts (validate, serve)
 ├── assets/
-│   └── images/         # Project images
-├── README.md           # This file
-└── CONTRIBUTING.md     # Contribution guidelines
+│   └── images/             # Project images
+├── README.md               # This file
+└── CONTRIBUTING.md         # Contribution guidelines
 ```
 
 ---

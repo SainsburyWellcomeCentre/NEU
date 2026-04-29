@@ -223,6 +223,13 @@ ul, ol { list-style: none; }
   flex-wrap: wrap;
 }
 
+/* Hero modifiers */
+.hero--compact { padding: var(--space-3xl) var(--space-xl); }
+
+.hero__title--sm { font-size: var(--fs-3xl); }
+
+.hero__subtitle--flush { margin-bottom: 0; }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
@@ -302,11 +309,26 @@ ul, ol { list-style: none; }
   color: var(--text-muted);
 }
 
+.section__actions {
+  margin-top: var(--space-xl);
+}
+
+.link--accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ---------- Feature grid (Home) ---------- */
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
+}
+
+.features--narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
 }
 
 .feature-card {

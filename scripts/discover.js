@@ -1,32 +1,12 @@
 /* ============================================================
-   NEU — Neuroscience Engineering Universe
-   Client-side logic (v3 — slash-delimited categories, drill-down sidebar)
+   NEU — Discover page logic
+   Slash-delimited categories, drill-down sidebar, search & filter.
+   Only loaded on discover.html.
    ============================================================ */
 
 (function () {
   'use strict';
 
-  /* ---------- Mobile nav toggle ---------- */
-  const navToggle = document.querySelector('.nav__toggle');
-  const navLinks = document.querySelector('.nav__links');
-
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav__links--open');
-    });
-  }
-
-  /* ---------- Wiki sidebar toggle ---------- */
-  const wikiToggle = document.getElementById('wiki-sidebar-toggle');
-  const wikiSidebar = document.getElementById('wiki-sidebar');
-
-  if (wikiToggle && wikiSidebar) {
-    wikiToggle.addEventListener('click', () => {
-      wikiSidebar.classList.toggle('wiki-sidebar--open');
-    });
-  }
-
-  /* ---------- Discover page ---------- */
   const grid = document.getElementById('project-grid');
   const searchBox = document.getElementById('discover-search');
   const countEl = document.getElementById('discover-count');
