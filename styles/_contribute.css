@@ -1,0 +1,102 @@
+/* ---------- Contribute page ---------- */
+.steps {
+  display: grid;
+  gap: var(--space-2xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-lg);
+}
+
+.step__number {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.step__content {
+  padding-top: var(--space-xs);
+}
+
+.step__title {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.step__text {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.step__text code {
+  display: inline;
+  padding: 2px 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: var(--fs-xs);
+  color: var(--text);
+}
+
+/* Code block */
+.code-block {
+  margin-top: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--text);
+  color: #E2E8F0;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: var(--fs-xs);
+  line-height: 1.8;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+.code-block .key   { color: #7DD3FC; }
+.code-block .str   { color: #86EFAC; }
+.code-block .punct { color: #94A3B8; }
+
+/* Schema table */
+.schema-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-lg);
+  font-size: var(--fs-sm);
+}
+
+.schema-table th,
+.schema-table td {
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border);
+}
+
+.schema-table th {
+  background: var(--surface);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.schema-table td code {
+  padding: 2px 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: var(--fs-xs);
+}
