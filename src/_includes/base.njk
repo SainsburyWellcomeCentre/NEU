@@ -60,6 +60,11 @@
     window.NEU_BASE_URL = "{{ '/' | url }}";
   </script>
   <script src="{{ '/scripts/global.js' | url }}"></script>
+  {% if scripts %}
+    {% for s in scripts %}
+      <script src="{{ s | url }}"></script>
+    {% endfor %}
+  {% endif %}
   {% if extra_scripts %}
     {{ extra_scripts | safe }}
   {% endif %}
