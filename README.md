@@ -19,65 +19,82 @@ The Neuroscience Engineering Universe (NEU) curates and shares hardware and soft
 
 ---
 
-## Repository Structure
+## How It Works
 
-```
-NEU/
-├── index.html              # Homepage
-├── discover.html           # Browsable project catalogue
-├── contribute.html         # Contribution guide
-├── learn.html              # Learn hub page
-├── learn/
-│   ├── electronics.html    # Electronics wiki
-│   ├── mechanical.html     # Mechanical design wiki
-│   └── programming.html    # Programming wiki
-├── styles.css              # Stylesheet
-├── scripts/
-│   ├── global.js           # Shared client-side logic (nav, toggles)
-│   └── discover.js         # Discover page logic (search, filter, render)
-├── database.json           # Project database (add entries here)
-├── database.schema.json    # JSON Schema for database validation
-├── package.json            # Scripts (validate, serve)
-├── assets/
-│   └── images/             # Project images
-├── README.md               # This file
-└── CONTRIBUTING.md         # Contribution guidelines
-```
+The website is statically generated using **Eleventy (11ty)** and hosted on **GitHub Pages**. Project listings are stored in a centralized `database.json` file. When the site is built, Eleventy compiles the Nunjucks layouts, Markdown wiki pages, and static assets into the final HTML output.
+
+The repository utilizes **GitHub Actions** to automatically validate the database schema, check for dead links, and deploy the site upon merging to the `main` branch.
 
 ---
 
-## How It Works
+## Repository Structure
 
-The website is a static site hosted on **GitHub Pages**. Project listings are stored in a single `database.json` file at the root of the repository. When a user visits the *Discover* page, the browser fetches `database.json` and renders the catalogue dynamically.
-
-**No build step is required.** The site uses vanilla HTML, CSS, and JavaScript.
+```text
+NEU/
+├── src/
+│   ├── _data/
+│   │   └── learn_toc.json        # Wiki sidebar manifest
+│   ├── _includes/                # 11ty Nunjucks layouts (base.njk, wiki.njk)
+│   ├── assets/images/            # Project images
+│   ├── learn/                    # Markdown wiki pages
+│   ├── scripts/                  # Client-side JavaScript
+│   ├── styles/                   # Modular CSS components
+│   ├── database.json             # Project database (add entries here)
+│   ├── database.schema.json      # JSON Schema for database validation
+│   ├── index.html                # Homepage
+│   ├── discover.html             # Browsable project catalogue
+│   ├── contribute.html           # Contribution guide
+│   └── styles.css                # CSS entrypoint
+├── .github/workflows/            # CI/CD pipelines (validation & deployment)
+├── package.json                  # Dependencies and build scripts
+├── README.md                     # This file
+└── CONTRIBUTING.md               # Contribution guidelines
+```
 
 ---
 
 ## Adding a Project
 
 1. **Fork** this repository
-2. Add your project image to `assets/images/`
-3. Append your project entry to `database.json`
+2. Add your project image to `src/assets/images/`
+3. Append your project entry to `src/database.json`
 4. Open a **Pull Request** against `main`
 
-For full instructions and the JSON schema, see [CONTRIBUTING.md](CONTRIBUTING.md) or visit the [Contribute page](https://sainsburywellcomecentre.github.io/NEU/contribute.html) on the live site.
+For full instructions and the JSON schema, see [CONTRIBUTING.md](CONTRIBUTING.md) or visit the [Contribute page](https://sainsburywellcomecentre.github.io/NEU/contribute/) on the live site.
 
 ---
 
 ## Running Locally
 
-To preview the site on your machine, serve the repository with any static HTTP server:
+To preview the site on your machine, you'll need Node.js installed.
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm start
+   ```
+   *This command runs Eleventy in watch mode and serves the site at `http://localhost:8080`. Any changes to files in `src/` will automatically rebuild and reload the browser.*
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+   *This compiles the final static site into the `_site/` directory.*
+
+---
+
+## Validation Pipeline
+
+Before submitting a Pull Request, you can run the schema validator locally to ensure your additions to `database.json` are properly formatted:
 
 ```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js (npx)
-npx serve .
+npm run validate
 ```
-
-Then open [http://localhost:8000](http://localhost:8000) in your browser.
+This runs AJV against the `src/database.schema.json` file. This check is also automatically enforced by GitHub Actions on every Pull Request.
 
 ---
 

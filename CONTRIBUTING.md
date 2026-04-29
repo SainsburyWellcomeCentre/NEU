@@ -24,16 +24,16 @@ cd NEU
 
 ### 2. Add Your Project Image
 
-Place a clear image of your project in the `assets/images/` directory.
+Place a clear image of your project in the `src/assets/images/` directory.
 
 **Requirements:**
 - **Format:** `.webp`, `.png`, or `.jpg`
 - **Filename:** Use kebab-case, e.g. `my-lick-detector.webp`
 - **Size:** Aim for ≤ 500 KB. Images will be displayed at a 16:10 aspect ratio.
 
-### 3. Add Your Entry to `database.json`
+### 3. Add Your Entry to `src/database.json`
 
-Open `database.json` and append a new JSON object to the array. Follow this schema exactly:
+Open `src/database.json` and append a new JSON object to the array. Follow this schema exactly:
 
 ```json
 {
@@ -82,16 +82,16 @@ Actuator Controllers/BLDC Controllers
 
 ### 4. Validate Your JSON
 
-Before committing, make sure `database.json` is valid JSON. You can check with:
+Before committing, make sure your entry conforms to our JSON schema. You can check with:
 
 ```bash
-python -m json.tool database.json
+npm run validate
 ```
 
 ### 5. Commit & Push
 
 ```bash
-git add database.json assets/images/my-project-name.webp
+git add src/database.json src/assets/images/my-project-name.webp
 git commit -m "Add my-project-name to catalogue"
 git push origin main
 ```
