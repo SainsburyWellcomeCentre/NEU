@@ -1,0 +1,92 @@
+---
+layout: base.njk
+---
+
+<div class="wiki-layout" id="wiki-layout">
+
+  <!-- Sidebar -->
+  <aside class="wiki-sidebar" id="wiki-sidebar">
+    <div class="wiki-sidebar__header">
+      <a href="{{ '/learn/' | url }}" class="wiki-sidebar__back" id="wiki-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        All Topics
+      </a>
+    </div>
+    <nav class="wiki-sidebar__nav" id="wiki-nav">
+      {% for topic in learn_toc %}
+        <div class="wiki-sidebar__section">
+          {% set isActive = (page.url == topic.url) %}
+          {% set activeClass = 'wiki-sidebar__link--active' if isActive else '' %}
+          
+          <a href="{{ topic.url | url }}" class="wiki-sidebar__link {{ activeClass }}" id="wiki-nav-{{ topic.id }}">
+            {{ topic.icon | safe }}
+            {{ topic.title }}
+          </a>
+
+          {% if isActive and topic.sections %}
+            <div class="wiki-sidebar__subnav">
+              {% for sec in topic.sections %}
+                <a href="#{{ sec.id }}" class="wiki-sidebar__sublink">{{ sec.title }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="wiki-content" id="wiki-content">
+
+    <!-- Mobile sidebar toggle -->
+    <button class="wiki-sidebar-toggle" id="wiki-sidebar-toggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="14" y2="12" />
+        <line x1="4" y1="18" x2="18" y2="18" />
+      </svg>
+      Topics
+    </button>
+
+    <div class="wiki-content__header">
+      <span class="section__label">{{ topic_label }}</span>
+      <h1 class="wiki-content__title">{{ title }}</h1>
+      <p class="wiki-content__desc">{{ description }}</p>
+    </div>
+
+    {{ content | safe }}
+
+    <!-- Page navigation -->
+    <div class="wiki-page-nav" id="wiki-page-nav">
+      {% set prev = null %}
+      {% set next = null %}
+      {% for topic in learn_toc %}
+        {% if page.url == topic.url %}
+          {% if loop.index0 > 0 %}
+            {% set prev = learn_toc[loop.index0 - 1] %}
+          {% endif %}
+          {% if loop.index0 < (learn_toc | length - 1) %}
+            {% set next = learn_toc[loop.index0 + 1] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if prev %}
+        <a href="{{ prev.url | url }}" class="wiki-page-nav__link wiki-page-nav__link--prev">
+          <span class="wiki-page-nav__label">Previous</span>
+          <span class="wiki-page-nav__title">{{ prev.title }}</span>
+        </a>
+      {% else %}
+        <div></div>
+      {% endif %}
+
+      {% if next %}
+        <a href="{{ next.url | url }}" class="wiki-page-nav__link wiki-page-nav__link--next">
+          <span class="wiki-page-nav__label">Next</span>
+          <span class="wiki-page-nav__title">{{ next.title }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+  </main>
+</div>

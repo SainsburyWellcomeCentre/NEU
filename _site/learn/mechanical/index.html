@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mechanical Design</title>
+  <meta name="description" content="A collaborative platform where researchers and engineers share open-source tools, products, and projects purpose-built for neuroscience experiments.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" id="nav-logo">
+        <svg class="nav__logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 16 Q13 10, 16 16 Q19 22, 22 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <circle cx="10" cy="16" r="2" fill="currentColor" />
+          <circle cx="22" cy="16" r="2" fill="currentColor" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+        </svg>
+        NEU
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <div class="nav__links" id="nav-links">
+        <a href="/" class="nav__link ">Home</a>
+        <a href="/learn/" class="nav__link nav__link--active">Learn</a>
+        <a href="/discover/" class="nav__link ">Discover</a>
+        <a href="/contribute/" class="nav__link ">Contribute</a>
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU/discussions" class="nav__link" target="_blank" rel="noopener noreferrer">Discuss</a>
+      </div>
+    </div>
+  </nav>
+
+  
+<div class="wiki-layout" id="wiki-layout">
+
+  <!-- Sidebar -->
+  <aside class="wiki-sidebar" id="wiki-sidebar">
+    <div class="wiki-sidebar__header">
+      <a href="/learn/" class="wiki-sidebar__back" id="wiki-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        All Topics
+      </a>
+    </div>
+    <nav class="wiki-sidebar__nav" id="wiki-nav">
+      
+        <div class="wiki-sidebar__section">
+          
+          
+          
+          <a href="/learn/electronics/" class="wiki-sidebar__link " id="wiki-nav-electronics">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+            Electronics
+          </a>
+
+          
+        </div>
+      
+        <div class="wiki-sidebar__section">
+          
+          
+          
+          <a href="/learn/mechanical/" class="wiki-sidebar__link wiki-sidebar__link--active" id="wiki-nav-mechanical">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+            Mechanical
+          </a>
+
+          
+            <div class="wiki-sidebar__subnav">
+              
+                <a href="#tolerances" class="wiki-sidebar__sublink">Tolerances &amp; Fits</a>
+              
+                <a href="#materials" class="wiki-sidebar__sublink">Material Selection</a>
+              
+                <a href="#fasteners" class="wiki-sidebar__sublink">Fasteners &amp; Threads</a>
+              
+                <a href="#3d-printing" class="wiki-sidebar__sublink">3D Printing Guidelines</a>
+              
+            </div>
+          
+        </div>
+      
+        <div class="wiki-sidebar__section">
+          
+          
+          
+          <a href="/learn/programming/" class="wiki-sidebar__link " id="wiki-nav-programming">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+            Programming
+          </a>
+
+          
+        </div>
+      
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="wiki-content" id="wiki-content">
+
+    <!-- Mobile sidebar toggle -->
+    <button class="wiki-sidebar-toggle" id="wiki-sidebar-toggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="14" y2="12" />
+        <line x1="4" y1="18" x2="18" y2="18" />
+      </svg>
+      Topics
+    </button>
+
+    <div class="wiki-content__header">
+      <span class="section__label">Mechanical</span>
+      <h1 class="wiki-content__title">Mechanical Design</h1>
+      <p class="wiki-content__desc"></p>
+    </div>
+
+    <p>Designing reliable mechanical components is essential for experimental setups, ensuring stability, precision, and ease of use.</p>
+<h2>Tolerances &amp; Fits</h2>
+<p>Properly specified tolerances ensure parts fit together as intended without requiring excessive machining time or cost.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Use standard clearance and interference fits (e.g., ISO standard) where possible.</li>
+<li>Consider manufacturing methods when specifying tolerances (e.g., CNC milling vs. 3D printing).</li>
+<li>Apply looser tolerances where precise fit isn't critical to reduce cost.</li>
+</ul>
+</blockquote>
+<h2>Material Selection</h2>
+<p>Choosing the right material impacts the strength, weight, and biocompatibility of your parts.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li><strong>Aluminum (e.g., 6061-T6):</strong> Good balance of strength, weight, and machinability. Excellent for structural components.</li>
+<li><strong>Stainless Steel (e.g., 316L):</strong> High strength and corrosion resistance. Ideal for parts exposed to fluids or requiring high rigidity.</li>
+<li><strong>Plastics (e.g., POM/Delrin):</strong> Low friction, easy to machine. Good for bushings and non-load-bearing parts.</li>
+<li>Consider biocompatibility for parts directly interacting with animals.</li>
+</ul>
+</blockquote>
+<h2>Fasteners &amp; Threads</h2>
+<p>Selecting appropriate fasteners ensures reliable assembly and disassembly of your setups.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Standardize on a few metric thread sizes (e.g., M2, M3, M4) to reduce the number of tools required.</li>
+<li>Use threaded inserts in soft materials like plastics or 3D prints for repeated assembly.</li>
+<li>Apply threadlocker (e.g., Loctite) to components subjected to vibration.</li>
+</ul>
+</blockquote>
+<h2>3D Printing Guidelines</h2>
+<p>3D printing (FDM, SLA) is invaluable for rapid prototyping and creating custom fixtures.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Design for the specific printing process (e.g., avoid steep overhangs for FDM, provide escape holes for SLA).</li>
+<li>Orient parts to maximize strength along critical axes, as FDM prints are weakest between layers.</li>
+<li>Incorporate tolerances for shrinkage and expansion, especially for holes and mating surfaces.</li>
+</ul>
+</blockquote>
+
+
+    <!-- Page navigation -->
+    <div class="wiki-page-nav" id="wiki-page-nav">
+      
+      
+      
+        
+      
+        
+          
+            
+          
+          
+            
+          
+        
+      
+        
+      
+
+      
+        <a href="/learn/electronics/" class="wiki-page-nav__link wiki-page-nav__link--prev">
+          <span class="wiki-page-nav__label">Previous</span>
+          <span class="wiki-page-nav__title">Electronics</span>
+        </a>
+      
+
+      
+        <a href="/learn/programming/" class="wiki-page-nav__link wiki-page-nav__link--next">
+          <span class="wiki-page-nav__label">Next</span>
+          <span class="wiki-page-nav__title">Programming</span>
+        </a>
+      
+    </div>
+
+  </main>
+</div>
+
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <p class="footer__text">&copy; 2026 Neuroscience Engineering Universe. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/contribute/" class="footer__link">Contribute</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/global.js"></script>
+  
+</body>
+
+</html>

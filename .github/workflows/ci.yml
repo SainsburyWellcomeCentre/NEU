@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build site
+        run: npm run build
+        
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: _site
+          path: _site/
+
+  validate-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Validate JSON Schema
+        run: npx -y ajv-cli validate -s src/database.schema.json -d src/database.json --spec=draft2020
+
+  validate-html:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: _site
+          path: _site/
+          
+      - name: Validate HTML
+        run: npx -y htmlhint "_site/**/*.html"
+
+  check-links:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/download-artifact@v4
+        with:
+          name: _site
+          path: _site/
+          
+      - name: Check internal and external links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress "_site/**/*.html"
+          fail: true

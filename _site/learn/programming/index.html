@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming &amp; Firmware</title>
+  <meta name="description" content="A collaborative platform where researchers and engineers share open-source tools, products, and projects purpose-built for neuroscience experiments.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" id="nav-logo">
+        <svg class="nav__logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 16 Q13 10, 16 16 Q19 22, 22 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <circle cx="10" cy="16" r="2" fill="currentColor" />
+          <circle cx="22" cy="16" r="2" fill="currentColor" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+        </svg>
+        NEU
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <div class="nav__links" id="nav-links">
+        <a href="/" class="nav__link ">Home</a>
+        <a href="/learn/" class="nav__link nav__link--active">Learn</a>
+        <a href="/discover/" class="nav__link ">Discover</a>
+        <a href="/contribute/" class="nav__link ">Contribute</a>
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU/discussions" class="nav__link" target="_blank" rel="noopener noreferrer">Discuss</a>
+      </div>
+    </div>
+  </nav>
+
+  
+<div class="wiki-layout" id="wiki-layout">
+
+  <!-- Sidebar -->
+  <aside class="wiki-sidebar" id="wiki-sidebar">
+    <div class="wiki-sidebar__header">
+      <a href="/learn/" class="wiki-sidebar__back" id="wiki-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        All Topics
+      </a>
+    </div>
+    <nav class="wiki-sidebar__nav" id="wiki-nav">
+      
+        <div class="wiki-sidebar__section">
+          
+          
+          
+          <a href="/learn/electronics/" class="wiki-sidebar__link " id="wiki-nav-electronics">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+            Electronics
+          </a>
+
+          
+        </div>
+      
+        <div class="wiki-sidebar__section">
+          
+          
+          
+          <a href="/learn/mechanical/" class="wiki-sidebar__link " id="wiki-nav-mechanical">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+            Mechanical
+          </a>
+
+          
+        </div>
+      
+        <div class="wiki-sidebar__section">
+          
+          
+          
+          <a href="/learn/programming/" class="wiki-sidebar__link wiki-sidebar__link--active" id="wiki-nav-programming">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+            Programming
+          </a>
+
+          
+            <div class="wiki-sidebar__subnav">
+              
+                <a href="#version-control" class="wiki-sidebar__sublink">Version Control (Git)</a>
+              
+                <a href="#code-style" class="wiki-sidebar__sublink">Code Style &amp; Linting</a>
+              
+                <a href="#hardware-interfacing" class="wiki-sidebar__sublink">Hardware Interfacing</a>
+              
+                <a href="#real-time" class="wiki-sidebar__sublink">Real-time Constraints</a>
+              
+            </div>
+          
+        </div>
+      
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="wiki-content" id="wiki-content">
+
+    <!-- Mobile sidebar toggle -->
+    <button class="wiki-sidebar-toggle" id="wiki-sidebar-toggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="14" y2="12" />
+        <line x1="4" y1="18" x2="18" y2="18" />
+      </svg>
+      Topics
+    </button>
+
+    <div class="wiki-content__header">
+      <span class="section__label">Programming</span>
+      <h1 class="wiki-content__title">Programming &amp; Firmware</h1>
+      <p class="wiki-content__desc"></p>
+    </div>
+
+    <p>Robust software is the backbone of modern experimental automation. Writing clean, maintainable, and reliable code ensures reproducibility.</p>
+<h2>Version Control (Git)</h2>
+<p>Version control is non-negotiable for any software project, allowing you to track changes, collaborate, and revert to known good states.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Commit often with clear, descriptive messages.</li>
+<li>Use branches for new features or experiments to keep the main branch stable.</li>
+<li>Host repositories on platforms like GitHub or GitLab for backup and sharing.</li>
+</ul>
+</blockquote>
+<h2>Code Style &amp; Linting</h2>
+<p>Consistent code style makes software easier to read, understand, and maintain, especially in collaborative environments.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Adhere to standard style guides (e.g., PEP 8 for Python, Google C++ Style Guide).</li>
+<li>Use automated formatters (e.g., Black, Prettier) and linters (e.g., Flake8, ESLint) in your workflow.</li>
+<li>Document your code thoroughly with docstrings and comments explaining <em>why</em>, not just <em>what</em>.</li>
+</ul>
+</blockquote>
+<h2>Hardware Interfacing</h2>
+<p>Reliable communication between software and hardware is critical for data acquisition and stimulus delivery.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Handle communication timeouts gracefully to prevent software hangs.</li>
+<li>Use established protocols (e.g., Serial/UART, SPI, I2C) rather than creating custom ones when possible.</li>
+<li>Buffer incoming data to prevent dropped samples during high-speed acquisition.</li>
+</ul>
+</blockquote>
+<h2>Real-time Constraints</h2>
+<p>Many neuroscience experiments require precise timing for stimulus presentation and behavior logging. Standard operating systems (like Windows or macOS) are not real-time.</p>
+<blockquote>
+<h3>Key Points</h3>
+<ul>
+<li>Offload time-critical tasks (e.g., generating precise pulses) to dedicated microcontrollers (e.g., Arduino, Teensy).</li>
+<li>Use hardware timers and interrupts rather than software loops for precise delays.</li>
+<li>If precise software timing is required, use a Real-Time Operating System (RTOS) or dedicated real-time hardware.</li>
+</ul>
+</blockquote>
+
+
+    <!-- Page navigation -->
+    <div class="wiki-page-nav" id="wiki-page-nav">
+      
+      
+      
+        
+      
+        
+      
+        
+          
+            
+          
+          
+        
+      
+
+      
+        <a href="/learn/mechanical/" class="wiki-page-nav__link wiki-page-nav__link--prev">
+          <span class="wiki-page-nav__label">Previous</span>
+          <span class="wiki-page-nav__title">Mechanical</span>
+        </a>
+      
+
+      
+    </div>
+
+  </main>
+</div>
+
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <p class="footer__text">&copy; 2026 Neuroscience Engineering Universe. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/contribute/" class="footer__link">Contribute</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/global.js"></script>
+  
+</body>
+
+</html>

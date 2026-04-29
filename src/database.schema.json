@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NEU Project Database",
+  "description": "Schema for the NEU project catalogue (database.json).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "category", "description", "authors", "image", "link"],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9._-]*$",
+        "description": "Unique kebab-case identifier (e.g. 'my-lick-detector')."
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Human-readable project name."
+      },
+      "category": {
+        "type": "string",
+        "pattern": "^[^/]+(\/[^/]+)*$",
+        "description": "Slash-delimited category path (e.g. 'Sensors/Touch Sensors'). Supports unlimited depth."
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Brief description of the project and its application."
+      },
+      "authors": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "minItems": 1,
+        "description": "List of contributing institutions or individuals."
+      },
+      "image": {
+        "type": "string",
+        "pattern": "^assets\/images\/.+",
+        "description": "Relative path to the project image in assets/images/."
+      },
+      "link": {
+        "type": "string",
+        "pattern": "^https?://",
+        "description": "URL to the project repository or product page."
+      },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "description": "Free-form keywords for search (e.g. 'capacitive', 'fiber photometry')."
+      },
+      "specs": {
+        "type": "object",
+        "additionalProperties": { "type": "string" },
+        "description": "Key-value pairs for technical specifications."
+      }
+    }
+  }
+}

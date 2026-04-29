@@ -1,0 +1,21 @@
+/* ============================================================
+   NEU — Neuroscience Engineering Universe
+   Main Stylesheet (Imports)
+   ============================================================ */
+
+@import url("styles/_tokens.css");
+@import url("styles/_reset.css");
+@import url("styles/_nav.css");
+@import url("styles/_hero.css");
+@import url("styles/_buttons.css");
+@import url("styles/_section.css");
+@import url("styles/_feature-card.css");
+@import url("styles/_partners.css");
+@import url("styles/_discover.css");
+@import url("styles/_project-card.css");
+@import url("styles/_discover-sidebar.css");
+@import url("styles/_contribute.css");
+@import url("styles/_learn-hub.css");
+@import url("styles/_wiki.css");
+@import url("styles/_footer.css");
+@import url("styles/_responsive.css");
