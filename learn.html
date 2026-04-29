@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn — NEU</title>
+  <meta name="description"
+    content="Engineering fundamentals for neuroscientists. Learn electronics, mechanical design, and programming concepts to improve experimental quality and accelerate development.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" id="nav-logo">
+        <svg class="nav__logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 16 Q13 10, 16 16 Q19 22, 22 16" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" />
+          <circle cx="10" cy="16" r="2" fill="currentColor" />
+          <circle cx="22" cy="16" r="2" fill="currentColor" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+        </svg>
+        NEU
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <div class="nav__links" id="nav-links">
+        <a href="index.html" class="nav__link" id="nav-home">Home</a>
+        <a href="learn.html" class="nav__link nav__link--active" id="nav-learn">Learn</a>
+        <a href="discover.html" class="nav__link" id="nav-discover">Discover</a>
+        <a href="contribute.html" class="nav__link" id="nav-contribute">Contribute</a>
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU/discussions" class="nav__link" id="nav-discussions"
+          target="_blank" rel="noopener noreferrer">Discuss</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== Page Header ====== -->
+  <header class="hero" id="learn-hero" style="padding:var(--space-3xl) var(--space-xl)">
+    <div class="hero__inner">
+      <span class="hero__badge">Reference</span>
+      <h1 class="hero__title" style="font-size:var(--fs-3xl)">Engineering Fundamentals</h1>
+      <p class="hero__subtitle" style="margin-bottom:0">
+        Practical engineering knowledge for neuroscientists — reduce errors, improve data quality,
+        and accelerate your development cycle.
+      </p>
+    </div>
+  </header>
+
+  <!-- ====== Topic Cards ====== -->
+  <section class="section" id="learn-topics">
+    <div class="section__inner">
+
+      <div class="learn-hub-grid" id="learn-hub-grid">
+
+        <!-- Electronics -->
+        <a href="learn/electronics.html" class="learn-hub-card" id="hub-electronics">
+          <div class="learn-hub-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <div class="learn-hub-card__body">
+            <h2 class="learn-hub-card__title">Electronics</h2>
+            <p class="learn-hub-card__desc">
+              EMI, grounding, signal conditioning, and PCB design — build reliable data acquisition
+              systems and avoid signal artefacts.
+            </p>
+            <ul class="learn-hub-card__topics">
+              <li>Electromagnetic Interference</li>
+              <li>Grounding &amp; Ground Loops</li>
+              <li>Signal Conditioning</li>
+              <li>PCB Design Basics</li>
+            </ul>
+          </div>
+          <span class="learn-hub-card__arrow">
+            <svg viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Mechanical -->
+        <a href="learn/mechanical.html" class="learn-hub-card" id="hub-mechanical">
+          <div class="learn-hub-card__icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </div>
+          <div class="learn-hub-card__body">
+            <h2 class="learn-hub-card__title">Mechanical Design</h2>
+            <p class="learn-hub-card__desc">
+              Vibration isolation, thermal management, material selection, and tolerances — ensure
+              precision and reproducibility in your experiments.
+            </p>
+            <ul class="learn-hub-card__topics">
+              <li>Vibration &amp; Isolation</li>
+              <li>Thermal Management</li>
+              <li>Material Selection</li>
+              <li>Tolerances &amp; Fits</li>
+            </ul>
+          </div>
+          <span class="learn-hub-card__arrow">
+            <svg viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Programming -->
+        <a href="learn/programming.html" class="learn-hub-card" id="hub-programming">
+          <div class="learn-hub-card__icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <div class="learn-hub-card__body">
+            <h2 class="learn-hub-card__title">Programming</h2>
+            <p class="learn-hub-card__desc">
+              Version control, serial protocols, real-time timing, and data formats — write better
+              code and make your experiments reproducible.
+            </p>
+            <ul class="learn-hub-card__topics">
+              <li>Version Control (Git)</li>
+              <li>Serial Communication Protocols</li>
+              <li>Real-Time &amp; Timing</li>
+              <li>Data Formats &amp; Reproducibility</li>
+            </ul>
+          </div>
+          <span class="learn-hub-card__arrow">
+            <svg viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <p class="footer__text">&copy; 2026 Neuroscience Engineering Universe. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU" class="footer__link" id="footer-github" target="_blank"
+          rel="noopener noreferrer">GitHub</a>
+        <a href="contribute.html" class="footer__link" id="footer-contribute">Contribute</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming — Learn — NEU</title>
+  <meta name="description"
+    content="Software and firmware fundamentals for neuroscientists. Learn about version control, serial protocols, real-time timing, and data formats.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" id="nav-logo">
+        <svg class="nav__logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 16 Q13 10, 16 16 Q19 22, 22 16" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" />
+          <circle cx="10" cy="16" r="2" fill="currentColor" />
+          <circle cx="22" cy="16" r="2" fill="currentColor" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+        </svg>
+        NEU
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link" id="nav-home">Home</a>
+        <a href="../learn.html" class="nav__link nav__link--active" id="nav-learn">Learn</a>
+        <a href="../discover.html" class="nav__link" id="nav-discover">Discover</a>
+        <a href="../contribute.html" class="nav__link" id="nav-contribute">Contribute</a>
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU/discussions" class="nav__link" id="nav-discussions"
+          target="_blank" rel="noopener noreferrer">Discuss</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== Wiki Layout ====== -->
+  <div class="wiki-layout" id="wiki-layout">
+
+    <!-- Sidebar -->
+    <aside class="wiki-sidebar" id="wiki-sidebar">
+      <div class="wiki-sidebar__header">
+        <a href="../learn.html" class="wiki-sidebar__back" id="wiki-back">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          All Topics
+        </a>
+      </div>
+
+      <nav class="wiki-sidebar__nav" id="wiki-nav">
+        <div class="wiki-sidebar__section">
+          <a href="electronics.html" class="wiki-sidebar__link" id="wiki-nav-electronics">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            Electronics
+          </a>
+        </div>
+
+        <div class="wiki-sidebar__section">
+          <a href="mechanical.html" class="wiki-sidebar__link" id="wiki-nav-mechanical">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+            Mechanical
+          </a>
+        </div>
+
+        <div class="wiki-sidebar__section">
+          <a href="programming.html" class="wiki-sidebar__link wiki-sidebar__link--active" id="wiki-nav-programming">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            Programming
+          </a>
+          <div class="wiki-sidebar__subnav">
+            <a href="#version-control" class="wiki-sidebar__sublink">Version Control (Git)</a>
+            <a href="#serial" class="wiki-sidebar__sublink">Serial Protocols</a>
+            <a href="#realtime" class="wiki-sidebar__sublink">Real-Time &amp; Timing</a>
+            <a href="#data-formats" class="wiki-sidebar__sublink">Data Formats</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="wiki-content" id="wiki-content">
+
+      <button class="wiki-sidebar-toggle" id="wiki-sidebar-toggle">
+        <svg viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="14" y2="12" />
+          <line x1="4" y1="18" x2="18" y2="18" />
+        </svg>
+        Topics
+      </button>
+
+      <div class="wiki-content__header">
+        <span class="section__label">Programming</span>
+        <h1 class="wiki-content__title">Software &amp; Firmware Fundamentals</h1>
+        <p class="wiki-content__desc">
+          Well-structured code is as important as well-designed hardware. Good software practices
+          reduce bugs, make experiments reproducible, and let others build on your work.
+        </p>
+      </div>
+
+      <!-- Version Control -->
+      <article class="wiki-article" id="version-control">
+        <h2 class="wiki-article__title">Version Control (Git)</h2>
+        <p class="wiki-article__text">
+          Version control tracks every change to your code and hardware files, lets you revert
+          mistakes, and enables collaboration without overwriting each other's work. Git is the
+          de facto standard.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>Commit small, logical changes with descriptive messages — not "fixed stuff"</li>
+            <li>Use <strong>branches</strong> for experimental features and merge only when tested</li>
+            <li>Tag releases that correspond to published data or hardware revisions</li>
+            <li>Never commit large binary files (recordings, images) — use Git LFS or external storage</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Serial Communication -->
+      <article class="wiki-article" id="serial">
+        <h2 class="wiki-article__title">Serial Communication Protocols</h2>
+        <p class="wiki-article__text">
+          Most lab instruments communicate via serial protocols. Understanding the differences
+          between UART, SPI, and I²C helps you choose the right interface and debug communication
+          failures.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li><strong>UART</strong> — point-to-point, asynchronous; ideal for PC-to-microcontroller links</li>
+            <li><strong>SPI</strong> — fast (MHz range), full-duplex; best for high-speed ADCs and DACs</li>
+            <li><strong>I²C</strong> — two-wire bus, multi-device; convenient for sensors and configuration ICs</li>
+            <li>Always check baud rate, data bits, parity, and stop bits when debugging UART issues</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Real-Time -->
+      <article class="wiki-article" id="realtime">
+        <h2 class="wiki-article__title">Real-Time &amp; Timing</h2>
+        <p class="wiki-article__text">
+          Many neuroscience experiments require precise timing — stimulus onset, reward delivery,
+          or synchronisation between multiple instruments. Understanding real-time constraints
+          prevents missed events and timing jitter.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>Use <strong>hardware interrupts</strong>, not polling, for time-critical events</li>
+            <li>Avoid blocking calls (delays, serial waits) in timing-critical loops</li>
+            <li>Synchronise instruments with a shared TTL clock line rather than software timestamps</li>
+            <li>Characterise jitter with an oscilloscope — even microsecond variations can matter</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Data Formats -->
+      <article class="wiki-article" id="data-formats">
+        <h2 class="wiki-article__title">Data Formats &amp; Reproducibility</h2>
+        <p class="wiki-article__text">
+          How you store experimental data determines whether it can be re-analysed months
+          or years later. Structured, self-describing formats and clear metadata are essential.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>Use self-describing formats like <strong>HDF5</strong> or <strong>NWB</strong> instead of raw binary
+              or CSV</li>
+            <li>Record all experimental parameters (gain, sample rate, filter settings) alongside data</li>
+            <li>Use ISO 8601 timestamps and include timezone information</li>
+            <li>Write a README for every dataset explaining acquisition conditions and file structure</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Page navigation -->
+      <div class="wiki-page-nav" id="wiki-page-nav">
+        <a href="mechanical.html" class="wiki-page-nav__link wiki-page-nav__link--prev" id="wiki-prev">
+          <span class="wiki-page-nav__label">Previous</span>
+          <span class="wiki-page-nav__title">← Mechanical Design</span>
+        </a>
+        <div></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <p class="footer__text">&copy; 2026 Neuroscience Engineering Universe. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU" class="footer__link" id="footer-github" target="_blank"
+          rel="noopener noreferrer">GitHub</a>
+        <a href="../contribute.html" class="footer__link" id="footer-contribute">Contribute</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

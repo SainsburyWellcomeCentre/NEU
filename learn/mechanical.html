@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mechanical Design — Learn — NEU</title>
+  <meta name="description"
+    content="Mechanical design fundamentals for neuroscientists. Learn about vibration isolation, thermal management, material selection, and tolerances.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" id="nav-logo">
+        <svg class="nav__logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M10 16 Q13 10, 16 16 Q19 22, 22 16" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" />
+          <circle cx="10" cy="16" r="2" fill="currentColor" />
+          <circle cx="22" cy="16" r="2" fill="currentColor" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+        </svg>
+        NEU
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link" id="nav-home">Home</a>
+        <a href="../learn.html" class="nav__link nav__link--active" id="nav-learn">Learn</a>
+        <a href="../discover.html" class="nav__link" id="nav-discover">Discover</a>
+        <a href="../contribute.html" class="nav__link" id="nav-contribute">Contribute</a>
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU/discussions" class="nav__link" id="nav-discussions"
+          target="_blank" rel="noopener noreferrer">Discuss</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== Wiki Layout ====== -->
+  <div class="wiki-layout" id="wiki-layout">
+
+    <!-- Sidebar -->
+    <aside class="wiki-sidebar" id="wiki-sidebar">
+      <div class="wiki-sidebar__header">
+        <a href="../learn.html" class="wiki-sidebar__back" id="wiki-back">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          All Topics
+        </a>
+      </div>
+
+      <nav class="wiki-sidebar__nav" id="wiki-nav">
+        <div class="wiki-sidebar__section">
+          <a href="electronics.html" class="wiki-sidebar__link" id="wiki-nav-electronics">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            Electronics
+          </a>
+        </div>
+
+        <div class="wiki-sidebar__section">
+          <a href="mechanical.html" class="wiki-sidebar__link wiki-sidebar__link--active" id="wiki-nav-mechanical">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+            Mechanical
+          </a>
+          <div class="wiki-sidebar__subnav">
+            <a href="#vibration" class="wiki-sidebar__sublink">Vibration &amp; Isolation</a>
+            <a href="#thermal" class="wiki-sidebar__sublink">Thermal Management</a>
+            <a href="#materials" class="wiki-sidebar__sublink">Material Selection</a>
+            <a href="#tolerances" class="wiki-sidebar__sublink">Tolerances &amp; Fits</a>
+          </div>
+        </div>
+
+        <div class="wiki-sidebar__section">
+          <a href="programming.html" class="wiki-sidebar__link" id="wiki-nav-programming">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            Programming
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="wiki-content" id="wiki-content">
+
+      <button class="wiki-sidebar-toggle" id="wiki-sidebar-toggle">
+        <svg viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="14" y2="12" />
+          <line x1="4" y1="18" x2="18" y2="18" />
+        </svg>
+        Topics
+      </button>
+
+      <div class="wiki-content__header">
+        <span class="section__label">Mechanical</span>
+        <h1 class="wiki-content__title">Mechanical Design Fundamentals</h1>
+        <p class="wiki-content__desc">
+          Mechanical considerations — from vibration isolation to thermal management — directly affect
+          the precision and reproducibility of neuroscience experiments.
+        </p>
+      </div>
+
+      <!-- Vibration -->
+      <article class="wiki-article" id="vibration">
+        <h2 class="wiki-article__title">Vibration &amp; Isolation</h2>
+        <p class="wiki-article__text">
+          Vibrations from building HVAC systems, nearby equipment, or even footsteps can displace
+          micro-positioned probes by micrometres — enough to lose a single-unit recording or
+          introduce motion artefacts in imaging.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>Mount sensitive experiments on a <strong>vibration-isolated optical table</strong> (air or passive
+              dampened)</li>
+            <li>Decouple motorised stages with rubber bushings or vibration-absorbing feet</li>
+            <li>Avoid mounting stepper motors directly on the same structure as recording electrodes</li>
+            <li>Characterise vibration spectra with an accelerometer before and after isolation</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Thermal -->
+      <article class="wiki-article" id="thermal">
+        <h2 class="wiki-article__title">Thermal Management</h2>
+        <p class="wiki-article__text">
+          Heat generated by LEDs, laser drivers, or enclosed electronics can drift sensor baselines,
+          warp 3D-printed components, and stress solder joints. Thermal design must be considered
+          from the start, not added as an afterthought.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>Calculate power dissipation for every heat-generating component and size heatsinks accordingly</li>
+            <li>Use thermal vias under power components to conduct heat to a ground plane</li>
+            <li>Ensure adequate ventilation in enclosures — convection or forced air as needed</li>
+            <li>Consider the thermal expansion coefficient of materials when combining metal and plastic parts</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Materials -->
+      <article class="wiki-article" id="materials">
+        <h2 class="wiki-article__title">Material Selection</h2>
+        <p class="wiki-article__text">
+          The choice of material affects rigidity, weight, biocompatibility, and machinability.
+          Selecting the wrong material can lead to parts that flex under load, corrode in contact
+          with saline, or outgas chemicals that harm live tissue.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>Use <strong>stainless steel (316L)</strong> or titanium for components in contact with biological
+              fluids</li>
+            <li>PLA is adequate for prototyping but deforms above ~55 °C — use PETG or ABS for final parts</li>
+            <li>Aluminium is excellent for heatsinks and structural frames due to its strength-to-weight ratio</li>
+            <li>Avoid brass near saline — it corrodes and releases zinc ions toxic to tissue</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Tolerances -->
+      <article class="wiki-article" id="tolerances">
+        <h2 class="wiki-article__title">Tolerances &amp; Fits</h2>
+        <p class="wiki-article__text">
+          Specifying appropriate tolerances ensures parts fit together as intended.
+          Over-tolerancing increases cost; under-tolerancing leads to loose assemblies
+          and poor repeatability.
+        </p>
+        <div class="wiki-article__keypoints">
+          <h3 class="wiki-article__keypoints-title">Key Points</h3>
+          <ul class="wiki-article__list">
+            <li>FDM 3D printers typically achieve ±0.2 mm — design clearances accordingly</li>
+            <li>CNC machining can achieve ±0.05 mm for most features</li>
+            <li>Use press-fit (interference) for permanent assemblies, slip-fit for removable ones</li>
+            <li>Always test critical dimensions with a calliper before committing to a full production run</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Page navigation -->
+      <div class="wiki-page-nav" id="wiki-page-nav">
+        <a href="electronics.html" class="wiki-page-nav__link wiki-page-nav__link--prev" id="wiki-prev">
+          <span class="wiki-page-nav__label">Previous</span>
+          <span class="wiki-page-nav__title">← Electronics</span>
+        </a>
+        <a href="programming.html" class="wiki-page-nav__link wiki-page-nav__link--next" id="wiki-next">
+          <span class="wiki-page-nav__label">Next</span>
+          <span class="wiki-page-nav__title">Programming →</span>
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <p class="footer__text">&copy; 2026 Neuroscience Engineering Universe. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="https://github.com/SainsburyWellcomeCentre/NEU" class="footer__link" id="footer-github" target="_blank"
+          rel="noopener noreferrer">GitHub</a>
+        <a href="../contribute.html" class="footer__link" id="footer-contribute">Contribute</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>
