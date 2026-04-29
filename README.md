@@ -21,7 +21,7 @@ The Neuroscience Engineering Universe (NEU) curates and shares hardware and soft
 
 ## How It Works
 
-The website is statically generated using **Eleventy (11ty)** and hosted on **GitHub Pages**. Project listings are stored in a centralized `database.json` file. When the site is built, Eleventy compiles the Nunjucks layouts, Markdown wiki pages, and static assets into the final HTML output.
+The website is statically generated using **Eleventy (11ty)** and hosted on **GitHub Pages**. Each project listing is stored as an individual JSON file in `src/projects/`. At build time, Eleventy aggregates these files into a single `database.json` that the front-end fetches. This per-file approach eliminates merge conflicts when multiple contributors submit projects simultaneously.
 
 The repository utilizes **GitHub Actions** to automatically validate the database schema, check for dead links, and deploy the site upon merging to the `main` branch.
 
@@ -39,8 +39,8 @@ NEU/
 │   ├── learn/                    # Markdown wiki pages
 │   ├── scripts/                  # Client-side JavaScript
 │   ├── styles/                   # Modular CSS components
-│   ├── database.json             # Project database (add entries here)
-│   ├── database.schema.json      # JSON Schema for database validation
+│   ├── projects/                  # Per-project JSON files (one per project)
+│   ├── database.schema.json      # JSON Schema for project validation
 │   ├── index.html                # Homepage
 │   ├── discover.html             # Browsable project catalogue
 │   ├── contribute.html           # Contribution guide
@@ -57,7 +57,7 @@ NEU/
 
 1. **Fork** this repository
 2. Add your project image to `src/assets/images/`
-3. Append your project entry to `src/database.json`
+3. Create your project entry as `src/projects/<your-id>.json`
 4. Open a **Pull Request** against `main`
 
 For full instructions and the JSON schema, see [CONTRIBUTING.md](CONTRIBUTING.md) or visit the [Contribute page](https://sainsburywellcomecentre.github.io/NEU/contribute/) on the live site.
@@ -89,12 +89,12 @@ To preview the site on your machine, you'll need Node.js installed.
 
 ## Validation Pipeline
 
-Before submitting a Pull Request, you can run the schema validator locally to ensure your additions to `database.json` are properly formatted:
+Before submitting a Pull Request, you can run the schema validator locally to ensure your project file is properly formatted:
 
 ```bash
 npm run validate
 ```
-This runs AJV against the `src/database.schema.json` file. This check is also automatically enforced by GitHub Actions on every Pull Request.
+This runs AJV against each `src/projects/*.json` file using the `src/database.schema.json` schema. This check is also automatically enforced by GitHub Actions on every Pull Request.
 
 ---
 

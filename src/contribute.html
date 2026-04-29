@@ -64,9 +64,10 @@ title: Contribute — NEU
         <div class="step" id="step-json">
           <div class="step__number">3</div>
           <div class="step__content">
-            <h2 class="step__title">Add Your Entry to the Database</h2>
+            <h2 class="step__title">Create Your Project File</h2>
             <p class="step__text">
-              Open <code>database.json</code> and append a new object to the array.
+              Create a new file in the <code>projects/</code> directory named
+              <code>&lt;your-project-id&gt;.json</code>.
               Follow the schema below exactly:
             </p>
             <div class="code-block">
@@ -168,7 +169,8 @@ title: Contribute — NEU
               submission and, if everything follows the guidelines, merge it into the catalogue.
             </p>
             <div class="code-block">
-              <span class="punct">$</span> git add database.json assets/images/<span
+              <span class="punct">$</span> git add projects/<span
+                class="str">my-project-name.json</span> assets/images/<span
                 class="str">my-project-name.webp</span><br>
               <span class="punct">$</span> git commit -m <span class="str">"Add my-project-name to catalogue"</span><br>
               <span class="punct">$</span> git push origin main

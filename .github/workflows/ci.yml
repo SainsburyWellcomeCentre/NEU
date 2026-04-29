@@ -44,7 +44,7 @@ jobs:
           node-version: '24'
           
       - name: Validate JSON Schema
-        run: npx -y ajv-cli validate -s src/database.schema.json -d src/database.json --spec=draft2020
+        run: npx -y ajv-cli validate -s src/database.schema.json -d "src/projects/*.json" --spec=draft2020
 
   validate-html:
     needs: build

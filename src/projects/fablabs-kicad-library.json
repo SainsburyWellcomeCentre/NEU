@@ -1,0 +1,18 @@
+{
+  "id": "fablabs-kicad-library",
+  "name": "KiCad Library",
+  "category": "Libraries/Electronics/KiCad",
+  "description": "A collection of reusable components for use in KiCad schematic and PCB design.",
+  "authors": [
+    "Sainsbury Wellcome Centre"
+  ],
+  "image": "assets/images/logo-kicad.svg",
+  "link": "https://github.com/SainsburyWellcomeCentre/fablabs-kicad-library.git",
+  "tags": [
+    "kicad",
+    "library"
+  ],
+  "specs": {
+    "Type": "KiCad"
+  }
+}

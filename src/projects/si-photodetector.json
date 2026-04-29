@@ -1,0 +1,23 @@
+{
+  "id": "si-photodetector",
+  "name": "Silicon Photodetector Module",
+  "category": "Sensors/Photodetectors",
+  "description": "A low-noise silicon photodetector module optimised for measuring fluorescence signals in fibre photometry setups. Includes integrated transimpedance amplifier.",
+  "authors": [
+    "Paris Brain Institute (ICM)"
+  ],
+  "image": "assets/images/photodetector.webp",
+  "link": "https://github.com/ICM-Institute/si-photodetector",
+  "tags": [
+    "fiber photometry",
+    "fluorescence",
+    "silicon",
+    "low-noise"
+  ],
+  "specs": {
+    "Wavelength": "400–700 nm",
+    "Sensitivity": "0.5 A/W",
+    "Interface": "SMA fibre connector",
+    "Output": "Analog voltage"
+  }
+}

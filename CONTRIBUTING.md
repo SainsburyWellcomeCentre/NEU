@@ -31,9 +31,9 @@ Place a clear image of your project in the `src/assets/images/` directory.
 - **Filename:** Use kebab-case, e.g. `my-lick-detector.webp`
 - **Size:** Aim for ≤ 500 KB. Images will be displayed at a 16:10 aspect ratio.
 
-### 3. Add Your Entry to `src/database.json`
+### 3. Create Your Project File in `src/projects/`
 
-Open `src/database.json` and append a new JSON object to the array. Follow this schema exactly:
+Create a new file named `src/projects/<your-project-id>.json` (use the same kebab-case `id` as the filename). The file contains a single JSON object — follow this schema exactly:
 
 ```json
 {
@@ -91,7 +91,7 @@ npm run validate
 ### 5. Commit & Push
 
 ```bash
-git add src/database.json src/assets/images/my-project-name.webp
+git add src/projects/my-project-name.json src/assets/images/my-project-name.webp
 git commit -m "Add my-project-name to catalogue"
 git push origin main
 ```
@@ -110,7 +110,7 @@ Go to the [NEU repository](https://github.com/SainsburyWellcomeCentre/NEU) and o
 
 An NEU administrator will review your pull request. We check for:
 
-1. **Valid JSON** — The database file must parse without errors
+1. **Valid JSON** — Each project file must parse without errors
 2. **Complete fields** — All required fields are present
 3. **Image included** — A project image exists at the specified path
 4. **Neuroscience relevance** — The project is designed for or tested in neuroscience experiments

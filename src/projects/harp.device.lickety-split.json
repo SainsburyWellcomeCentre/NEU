@@ -1,0 +1,20 @@
+{
+  "id": "harp.device.lickety-split",
+  "name": "Lickety Split",
+  "category": "Sensors/Touch Sensors",
+  "description": "An ephys-compliant lick detector with Harp message protocol",
+  "authors": [
+    "Allen Institute"
+  ],
+  "image": "assets/images/harp.device.lickety-split.png",
+  "link": "https://github.com/AllenNeuralDynamics/harp.device.lickety-split.git",
+  "tags": [
+    "capacitive",
+    "lick detection"
+  ],
+  "specs": {
+    "Type": "Capacitive",
+    "Response Time": "<1 ms",
+    "Interface": "SMA (TTL), USB-C"
+  }
+}

@@ -3,7 +3,7 @@
   "private": true,
   "description": "Neuroscience Engineering Universe — project catalogue website",
   "scripts": {
-    "validate": "npx -y ajv-cli validate -s src/database.schema.json -d src/database.json --spec=draft2020",
+    "validate": "npx -y ajv-cli validate -s src/database.schema.json -d \"src/projects/*.json\" --spec=draft2020",
     "start": "eleventy --serve",
     "build": "eleventy"
   },

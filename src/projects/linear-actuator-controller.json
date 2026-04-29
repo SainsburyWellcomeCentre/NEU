@@ -1,0 +1,23 @@
+{
+  "id": "linear-actuator-controller",
+  "name": "Stepper Actuator Controller",
+  "category": "Actuator Controllers/Stepper Motor Controllers",
+  "description": "An open-source stepper motor controller for linear actuators used in reward delivery and stimulus presentation. Supports serial and TTL triggering.",
+  "authors": [
+    "Sainsbury Wellcome Centre"
+  ],
+  "image": "assets/images/actuator-controller.webp",
+  "link": "https://github.com/SainsburyWellcomeCentre/stepper-actuator-controller",
+  "tags": [
+    "stepper",
+    "reward delivery",
+    "stimulus",
+    "TTL"
+  ],
+  "specs": {
+    "Motor Type": "Bipolar stepper",
+    "Driver IC": "TMC2209",
+    "Interface": "USB serial / TTL",
+    "Microstepping": "Up to 1/256"
+  }
+}
